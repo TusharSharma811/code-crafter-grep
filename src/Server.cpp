@@ -98,6 +98,11 @@ bool match(const std::string& input_line, const std::string& pattern){
     int i = 0;
     while(i<input_line.size()){
         int j = 0;
+        bool start = false;
+        if(pattern[0] == '^'){
+            j++;
+            start = true;
+        }
         int temp = i;
         while(j<pattern.size() && temp < input_line.size()){
             if(pattern[j] == '\\'){
@@ -141,6 +146,7 @@ bool match(const std::string& input_line, const std::string& pattern){
             j++;
         }
         if(j == pattern.size()) return true;
+        if(start && j!= pattern.size()) return false;
         i++;
     }
     
