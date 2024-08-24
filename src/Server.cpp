@@ -21,7 +21,8 @@ bool positiveMatchGroup(const std::string& input_line, const std::string& patter
     std::stack<std::pair<char,char>> s_pair;
     int idx = 1, patternSize = pattern.length();
     if(end>=pattern.size()) end = pattern.size();
-    int idx = start, patternSize = end;
+     idx = start ;
+      patternSize = end;
     while(idx<patternSize){
         if(idx != patternSize-1 && pattern[idx] == '-'){
             idx++;
@@ -57,9 +58,11 @@ bool positiveMatchGroup(const std::string& input_line, const std::string& patter
 bool negitiveMatchGroup(const std::string& input_line, const std::string& pattern,int start,int end){
     std::stack<char> s;
     std::stack<std::pair<char,char>> s_pair;
-    int idx = 2, patternSize = pattern.length();
+    int idx = 2 ; 
+    int patternSize = pattern.length();
     if(end>=pattern.length()) end=pattern.length();
-    int idx = start+1, patternSize = end;
+     idx = start+1 ;
+     patternSize = end;
     while(idx<patternSize-1){
         if(idx != patternSize-1 && pattern[idx] == '-'){
             idx++;
