@@ -33,17 +33,17 @@ int main(int argc, char* argv[]) {
 
     // Uncomment this block to pass the first stage
     //
-    // std::string input_line;
-    // std::getline(std::cin, input_line);
-    //
-    // try {
-    //     if (match_pattern(input_line, pattern)) {
-    //         return 0;
-    //     } else {
-    //         return 1;
-    //     }
-    // } catch (const std::runtime_error& e) {
-    //     std::cerr << e.what() << std::endl;
-    //     return 1;
-    // }
+    std::string input_line;
+    std::getline(std::cin, input_line);
+    
+    try {
+        if (match_pattern(input_line, pattern)) {
+            return 0;
+        } else {
+            return 1;
+        }
+    } catch (const std::runtime_error& e) {
+        std::cerr << e.what() << std::endl;
+        return 1;
+    }
 }
